@@ -1,0 +1,95 @@
+{
+    "students":
+    {
+        "ref": Ref(Collection("students"), "--student_id"),
+        "ts": timestamp,
+        "data": {
+            "id": "uuid",
+            "name": "Hosber",
+            "email": "email@email.com",
+            "status": "active"
+            // "classId": Ref(Collection("classes"), "--class_id"),
+        }
+    },
+    
+    "teachers": {
+        "ref": Ref(Collection("teachers"), "--teacher_id"),
+        "ts": timestamp,
+        "data": {
+            "id": "uuid",
+            "name": "Mars",
+            "nickname": "string",
+            "email": "email@email.com",
+            "status": "active"
+        }
+    },
+    
+    "classes":
+    {
+        "ref": Ref(Collection("classes"), "--class_id"),
+        "ts": timestamp,
+        "data": {
+            "id": "uuid",
+            "hour": "hh",
+            "day": "dd",
+            "classAmount": "amount",
+            "status": "ongoing",
+            "teacher": Ref(Collection("teachers"), "--teacher_id"),
+            "studentsList": {
+                "studentId": Ref(Collection("students"), "--user_id"),
+                "studentStatus": 
+            },
+            "timetable": {
+                [1]: {
+                    "classStatus": "pending",
+                    "classDay": "dd",
+                    "classTime": "hour",
+                    "classTheme": "subject",
+                    "classHomework": "homework",
+                    "classRecording": "string",
+                    "classAttendance": {
+                        "studentOne": {
+                            "studentId": Ref(Collection("students"), "--user_id"),
+                            "presence": "boolean",
+                            "homework": "completed"
+                        }
+                    }
+                },
+                [2]: {
+                    "classStatus": "pending",
+                    "classDay": "dd",
+                    "classTime": "hour",
+                    "classTheme": "subject",
+                    "classHomework": "homework",
+                    "classRecording": "string",
+                    "classAttendance": {
+                        "studentOne": {
+                            "studentId": Ref(Collection("students"), "--user_id"),
+                            "presence": "boolean",
+                            "homework": "completed"
+                        }
+                    }
+                },
+                [class_id]: {
+                    "classStatus": "pending",
+                    "classDay": "dd",
+                    "classTime": "hour",
+                    "classTheme": "subject",
+                    "classHomework": "homework",
+                    "classRecording": "string",
+                    "classAttendance": {
+                        "studentOne": {
+                            "studentId": Ref(Collection("students"), "--user_id"),
+                            "presence": "boolean",
+                            "homework": "completed"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    }
